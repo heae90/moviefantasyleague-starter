@@ -33,8 +33,7 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 
 export default function HomePage() {
   return (
-   return (
-  <main className="page">
+    <main className="page">
 
     <div className="card" style={{ marginBottom: '20px' }}>
   <div className="hero-actions">

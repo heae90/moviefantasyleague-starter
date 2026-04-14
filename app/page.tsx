@@ -39,6 +39,7 @@ export default function HomePage() {
   <div className="hero-actions">
     <a className="button" href="/">Home</a>
     <a className="button button-outline" href="/#leaderboard">Leaderboard</a>
+    <a className="button button-outline" href="/draft">Draft</a>
     <a className="button button-outline" href="/rules">Rules</a>
     <a
       className="button button-outline"

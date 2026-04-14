@@ -37,12 +37,12 @@ export default function HomePage() {
       <section className="hero">
         <div>
           <div className="badges">
-            <span className="badge">CineDraft League</span>
-            <span className="badge badge-outline">Season 1 Beta</span>
+           <span className="badge">Movie Fantasy League</span>
+<span className="badge badge-outline">2026 Beta Season</span>
           </div>
-          <h1>Fantasy box office, built for your movie community.</h1>
+          <h1>Movie Fantasy League is where your movie picks become your season.</h1>
           <p className="hero-copy">
-            Draft unreleased movies, track opening weekend performance, and climb the leaderboard all season long.
+            Build your roster, follow opening weekend scores, and compete with friends all season from May through December.
           </p>
         </div>
         <div className="hero-actions">

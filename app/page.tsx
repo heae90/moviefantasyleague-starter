@@ -50,7 +50,7 @@ export default function HomePage() {
   Join the Beta League
 </a>
   <a className="button button-outline" href="#leaderboard">View Standings</a>
-  <a className="button button-outline" href="#rules">View Rules</a>
+  <a className="button button-outline" href="/rules">View Rules</a>
 </div>
       </section>
 

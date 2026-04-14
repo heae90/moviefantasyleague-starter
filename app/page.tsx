@@ -33,7 +33,19 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 
 export default function HomePage() {
   return (
-    <main className="page">
+   return (
+  <main className="page">
+
+    <div className="card" style={{ marginBottom: '20px' }}>
+      <div className="hero-actions">
+        <a className="button" href="/">Home</a>
+        <a className="button button-outline" href="/#leaderboard">Leaderboard</a>
+        <a className="button button-outline" href="/rules">Rules</a>
+        <a className="button button-outline" href="YOUR_GOOGLE_FORM_LINK" target="_blank">
+          Join
+        </a>
+      </div>
+    </div>
       <section className="hero">
         <div>
           <div className="badges">

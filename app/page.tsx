@@ -46,10 +46,7 @@ export default function HomePage() {
           </p>
         </div>
        <div className="hero-actions">
-  <a className="button" href="https://docs.google.com/forms/d/e/1FAIpQLSctspZTRdQvHVtaRrOi2I6lS_swUfTozQdymaCLd4qT0q6eMg/viewform?usp=header" target="_blank">
-  Join the Beta League
-</a>
-  <a className="button button-outline" href="#leaderboard">View Standings</a>
+  <a className="button" href="#leaderboard">View Standings</a>
   <a className="button button-outline" href="/rules">Rules</a>
 </div>
       </section>

@@ -38,6 +38,7 @@ export default function HomePage() {
 
     <div className="card" style={{ marginBottom: '20px' }}>
       <div className="hero-actions">
+        <a className="button button-outline" href="/admin">Admin</a>
         <a className="button" href="/">Home</a>
         <a className="button button-outline" href="/#leaderboard">Leaderboard</a>
         <a className="button button-outline" href="/rules">Rules</a>

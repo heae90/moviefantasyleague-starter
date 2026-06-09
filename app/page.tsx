@@ -1,143 +1,106 @@
-const standings = [
-  { rank: 1, team: "Reel Prophets", owner: "Richard", pts: 128, record: "7-2" },
-  { rank: 2, team: "Box Office Baptists", owner: "Carlos", pts: 119, record: "6-3" },
-  { rank: 3, team: "Cinema Sleepers", owner: "Amber", pts: 104, record: "5-4" },
-  { rank: 4, team: "Opening Weekend Kings", owner: "Marcus", pts: 97, record: "4-5" },
-];
-
-const movies = [
-  {
-    title: "Superman",
-    date: "July 11, 2025",
-    poster: "https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
-    lock: "Predictions lock Friday at noon",
-  },
-  {
-    title: "The Fantastic Four: First Steps",
-    date: "July 25, 2025",
-    poster: "https://image.tmdb.org/t/p/w500/x26MtUlwtWD26d0G0FXcppxCJio.jpg",
-    lock: "Coming soon",
-  },
-];
-
 export default function Home() {
+  const standings = [
+    ["1", "Reel Prophets", "Richard", "128"],
+    ["2", "Box Office Baptists", "Carlos", "119"],
+    ["3", "Cinema Sleepers", "Amber", "104"],
+    ["4", "Opening Weekend Kings", "Marcus", "97"],
+  ];
+
+  const movies = [
+    ["Avengers: Secret Wars", "Dec. 17, 2027"],
+    ["Man of Tomorrow", "July 9, 2027"],
+    ["The Batman Part II", "Oct. 1, 2027"],
+  ];
+
   return (
-    <main className="min-h-screen bg-[#101014] text-white">
-      <section className="bg-gradient-to-r from-red-900 via-zinc-950 to-black px-6 py-12">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-sm font-bold uppercase tracking-widest text-red-300">
-            Movie Fantasy League
-          </p>
-          <h1 className="mt-3 text-5xl font-black tracking-tight">
-            CineDraft League Hub
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-zinc-300">
-            The ESPN-style home for your movie prediction league. Track standings,
-            upcoming movie calls, league news, and weekly trash talk.
-          </p>
+    <main>
+      <style>{`
+        body { margin: 0; background: #0b0b10; color: white; font-family: Arial, sans-serif; }
+        .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { background: linear-gradient(135deg, #7f1d1d, #111827); padding: 50px 24px; }
+        h1 { font-size: 48px; margin: 10px 0; }
+        h2 { margin-top: 0; }
+        .grid { display: grid; gap: 20px; }
+        .cards { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+        .two { grid-template-columns: 2fr 1fr; }
+        .card { background: #18181b; border: 1px solid #27272a; border-radius: 18px; padding: 20px; box-shadow: 0 10px 30px #0004; }
+        .stat { font-size: 32px; font-weight: 900; color: #f87171; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; border-bottom: 1px solid #333; text-align: left; }
+        th { color: #fca5a5; }
+        .movies { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+        .poster { height: 300px; border-radius: 14px; background: linear-gradient(135deg, #991b1b, #1f2937); display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-size: 28px; font-weight: 900; }
+        .btn { display: inline-block; margin-top: 14px; background: #dc2626; color: white; padding: 12px 16px; border-radius: 12px; text-decoration: none; font-weight: 700; }
+        .podcast { background: #111827; border-left: 5px solid #ef4444; }
+        @media (max-width: 800px) { .two { grid-template-columns: 1fr; } h1 { font-size: 36px; } }
+      `}</style>
+
+      <section className="hero">
+        <div className="wrap">
+          <p>🎬 Movie Fantasy League</p>
+          <h1>CineDraft League Hub</h1>
+          <p>Your ESPN-style home for standings, movie predictions, podcast updates, and league trash talk.</p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-6 py-8 md:grid-cols-4">
-        {[
-          ["Current Leader", "Richard"],
-          ["League Members", "8"],
-          ["Official Movies", "24"],
-          ["Next Lock", "Friday"],
-        ].map(([label, value]) => (
-          <div key={label} className="rounded-2xl bg-zinc-900 p-5 shadow-lg">
-            <p className="text-sm text-zinc-400">{label}</p>
-            <p className="mt-2 text-3xl font-black">{value}</p>
-          </div>
-        ))}
+      <section className="wrap grid cards">
+        <div className="card"><p>Current Leader</p><div className="stat">Richard</div></div>
+        <div className="card"><p>League Members</p><div className="stat">8</div></div>
+        <div className="card"><p>Official Movies</p><div className="stat">24</div></div>
+        <div className="card"><p>Next Lock</p><div className="stat">Friday</div></div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-10 lg:grid-cols-3">
-        <div className="lg:col-span-2 rounded-2xl bg-zinc-900 p-6 shadow-lg">
-          <h2 className="mb-4 text-2xl font-black">Standings</h2>
-          <div className="overflow-hidden rounded-xl border border-zinc-800">
-            <table className="w-full text-left">
-              <thead className="bg-zinc-800 text-sm text-zinc-300">
-                <tr>
-                  <th className="p-3">Rank</th>
-                  <th className="p-3">Team</th>
-                  <th className="p-3">Owner</th>
-                  <th className="p-3">Record</th>
-                  <th className="p-3">Pts</th>
+      <section className="wrap grid two">
+        <div className="card">
+          <h2>Standings</h2>
+          <table>
+            <thead>
+              <tr><th>Rank</th><th>Team</th><th>Owner</th><th>Pts</th></tr>
+            </thead>
+            <tbody>
+              {standings.map((s) => (
+                <tr key={s[0]}>
+                  <td>#{s[0]}</td><td>{s[1]}</td><td>{s[2]}</td><td>{s[3]}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {standings.map((row) => (
-                  <tr key={row.team} className="border-t border-zinc-800">
-                    <td className="p-3 font-bold">#{row.rank}</td>
-                    <td className="p-3 font-bold text-red-300">{row.team}</td>
-                    <td className="p-3">{row.owner}</td>
-                    <td className="p-3">{row.record}</td>
-                    <td className="p-3 font-black">{row.pts}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        <div className="rounded-2xl bg-red-950 p-6 shadow-lg">
-          <h2 className="text-2xl font-black">League Rule</h2>
-          <p className="mt-3 text-zinc-200">
-            Only movies from the official league slate count toward standings.
-            Players can use Box Office Calls, but outside picks do not count.
-          </p>
+        <div className="card podcast">
+          <h2>Latest Podcast Episode</h2>
+          <p><b>Fresh Takes / CineDraft Corner</b></p>
+          <p>Add your Spotify, Apple, YouTube, or Buzzsprout link here.</p>
+          <a className="btn" href="#" target="_blank">Listen Now</a>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-10">
-        <h2 className="mb-4 text-2xl font-black">Upcoming Prediction Movies</h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {movies.map((movie) => (
-            <div key={movie.title} className="flex gap-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
-              <img
-                src={movie.poster}
-                alt={movie.title}
-                className="h-44 w-28 rounded-xl object-cover"
-              />
-              <div>
-                <p className="text-sm font-bold text-green-300">{movie.lock}</p>
-                <h3 className="mt-2 text-2xl font-black">{movie.title}</h3>
-                <p className="mt-1 text-zinc-400">Release: {movie.date}</p>
-                <a
-                  href="https://boxofficecalls.com/"
-                  className="mt-5 inline-block rounded-xl bg-red-600 px-4 py-2 font-bold hover:bg-red-500"
-                >
-                  Make Prediction
-                </a>
-              </div>
+      <section className="wrap">
+        <h2>Upcoming 2027 League Movies</h2>
+        <div className="grid movies">
+          {movies.map((m) => (
+            <div className="card" key={m[0]}>
+              <div className="poster">{m[0]}</div>
+              <h2>{m[0]}</h2>
+              <p>Release: {m[1]}</p>
+              <a className="btn" href="https://boxofficecalls.com/" target="_blank">Make Prediction</a>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-14 lg:grid-cols-2">
-        <div className="rounded-2xl bg-zinc-900 p-6 shadow-lg">
-          <h2 className="text-2xl font-black">League News</h2>
-          <ul className="mt-4 space-y-3 text-zinc-300">
-            <li>🔥 Richard holds first place after a strong opening weekend call.</li>
-            <li>🎬 Superman is the next major league prediction.</li>
-            <li>💀 Worst miss of the week earns the “Box Office Bomb” badge.</li>
-          </ul>
+      <section className="wrap grid two">
+        <div className="card">
+          <h2>League News</h2>
+          <p>🔥 Richard holds first place.</p>
+          <p>💀 Worst prediction earns the Box Office Bomb badge.</p>
+          <p>🎙 Weekly standings get covered on the podcast.</p>
         </div>
 
-        <div className="rounded-2xl bg-zinc-900 p-6 shadow-lg">
-          <h2 className="text-2xl font-black">Discussion Board</h2>
-          <div className="mt-4 space-y-3">
-            <div className="rounded-xl bg-zinc-800 p-4">
-              <p className="font-bold text-red-300">Commissioner</p>
-              <p className="text-zinc-300">Official slate only. No random outside picks.</p>
-            </div>
-            <div className="rounded-xl bg-zinc-800 p-4">
-              <p className="font-bold text-red-300">Richard</p>
-              <p className="text-zinc-300">Superman might decide the whole season.</p>
-            </div>
-          </div>
+        <div className="card">
+          <h2>Discussion Board</h2>
+          <p><b>Commissioner:</b> Only official league slate movies count.</p>
+          <p><b>Richard:</b> Secret Wars might decide the whole season.</p>
         </div>
       </section>
     </main>
